@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coin Toss App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .app {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .coin {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: gold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <h1>Coin Toss</h1>
+    <div class="coin" id="coin">?</div>
+    <button onclick="tossCoin()">Toss Coin</button>
+  </div>
+
+  <script>
+    function tossCoin() {
+      const coin = document.getElementById("coin");
+      const result = Math.random() < 0.5 ? "Heads" : "Tails";
+      coin.textContent = result;
+    }
+  </script>
+
+</body>
+</html>
